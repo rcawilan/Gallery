@@ -1,25 +1,69 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
-    background-attachment: fixed;
+    background: #0f0f0f;
     color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('img/herobg.jpg') center/cover;
-    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img/herobg.jpg') center/cover;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f5f5f5;
     text-align: center;
-    border-bottom: 2px solid rgba(205, 127, 50, 0.3);  
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(205, 127, 50, 0.05) 50%, transparent 52%),
+        radial-gradient(circle at 20% 50%, rgba(205, 127, 50, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(205, 127, 50, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 40px,
+            rgba(205, 127, 50, 0.03) 40px,
+            rgba(205, 127, 50, 0.03) 41px);
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50px);
+    }
 }
 
 .hero-content {
     padding: 40px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
 }
 
@@ -38,6 +82,36 @@ body {
     letter-spacing: 4px;
     text-shadow: 0 0 30px rgba(205, 127, 50, 0.4);
 }
+
+.gallery-wrapper {
+    background-image: url('img/contbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.gallery-wrapper .container {
+    position: relative;
+    z-index: 2;
+    padding: 80px 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .container h2 {
     color: #e8e8e8;
     font-size: 36px;
@@ -56,8 +130,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, #CD7F32, transparent);
+    box-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
 }
 
 .card {
@@ -94,7 +169,7 @@ body {
 }
 
 .card:hover .card-title {
-    text-shadow: 0 0 15px rgba(205, 127, 50, 0.4);;
+    text-shadow: 0 0 15px rgba(205, 127, 50, 0.4);
 }
 
 .card-body .card-caliber {
@@ -114,4 +189,68 @@ body {
 
 .card:hover .card-text {
     color: #c5c5c5;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 42px;
+    }
+}
+
+.video-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(205, 127, 50, 0.3);
+}
+
+.video-section h3 {
+    color: #e8e8e8;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+}
+
+.video-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #CD7F32, transparent);
+    box-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 44%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    background: #000;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-wrapper:hover {
+    border: 1px solid rgba(205, 127, 50, 0.6);
+    box-shadow: 0 16px 48px rgba(205, 127, 50, 0.25);
 }

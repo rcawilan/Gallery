@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Firearms Gallery</title>
+    <title>Firearms</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -14,16 +14,33 @@
     <div class="hero-section">
         <div class="hero-content">
             <p class="hero-subtitle">MODERN FIREARMS & PRECISION WEAPONRY</p>
-            <h1 class="hero-title">FIREARMS GALLERY</h1>
+            <h1 class="hero-title">TACTICAL EXCELLENCE</h1>
         </div>
     </div>
 
-    <div class="container my-5">
-        <h2 class="text-center mb-5">Elite Firearms</h2>
-        <div class="row" id="gallery-row"></div>
+    <div class="gallery-wrapper">
+        <div class="container">
+            <h2 class="text-center mb-5">Elite Firearms</h2>
+            <div class="row" id="gallery-row"></div>
+
+            <!-- Shooting Range Video -->
+            <div class="video-section">
+                <h3>Shooting Range</h3>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="video/shooting-range.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <footer class="footer-section">
+        <p> © 2025 Firearms Gallery | Ralph Cawilan</p>
+    </footer>
+
     <script src="data.js"></script>
+
     <script>
         var gunRow = document.getElementById("gallery-row");
 
@@ -45,10 +62,10 @@
         </div>
         `;
         }
-    </script>
 
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz4YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 </body>
 
