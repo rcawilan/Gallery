@@ -240,7 +240,7 @@ body {
     margin: 0 auto;
 }
 
-.video-wrapper iframe,
+.video-wrapper source,
 .video-wrapper video {
     position: absolute;
     top: 0;
@@ -253,4 +253,19 @@ body {
 .video-wrapper:hover {
     border: 1px solid rgba(205, 127, 50, 0.6);
     box-shadow: 0 16px 48px rgba(205, 127, 50, 0.25);
+}
+
+.footer-section {
+    background: #1a1a1a;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid rgba(205, 127, 50, 0.3);
+}
+
+.footer-section p {
+    margin: 0;
+    color: #b0b0b0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
